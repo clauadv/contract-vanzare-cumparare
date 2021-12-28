@@ -1,12 +1,12 @@
 {
-  "selected_type": "1",
+  "selected_type": "2",
 
   "type_1": {
-    "file": "samples/contract_1.docx"
+    "path": "samples/contract_1.docx"
   },
 
   "type_2": {
-    "file": "samples/contract_2.docx"
+    "path": "samples/contract_2.docx"
   },
 
   "data": {

@@ -4,16 +4,9 @@ const fs = require("fs");
 const performance = require("perf_hooks").performance;
 
 const json = JSON.parse(fs.readFileSync('data.json'));
-const get_type = () => {
-    if (json.selected_type == 1)
-        return { path: json.type_1.file };
-    else if (json.selected_type == 2)
-        return { path: json.type_2.file };
+const type = eval(`json.type_${json.selected_type}`);
 
-    return {};
-}
-
-const content = fs.readFileSync(get_type().path, "binary");
+const content = fs.readFileSync(type.path, "binary");
 const zip = new piz_zip(content);
 const doc = new docx_templater(zip, { paragraphLoop: true, linebreaks: true });
 
